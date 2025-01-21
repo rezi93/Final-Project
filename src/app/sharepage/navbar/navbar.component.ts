@@ -7,19 +7,18 @@ import { Router, RouterModule } from '@angular/router';
   standalone: true,
   imports: [RouterModule, CommonModule],
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css'] // Fixed typo from `styleUrl` to `styleUrls`
+  styleUrls: ['./navbar.component.css'] 
 })
 export class NavbarComponent {
   @Input() cartItemCount = 0;
 
   isCollapsed = true;
   isScrolled = false;
-  isLoggedIn = false; // Tracks login status
+  isLoggedIn = false; 
 
   constructor(private router: Router) {}
 
   ngOnInit() {
-    // Check login status on initialization
     this.isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
   }
 
@@ -33,16 +32,16 @@ export class NavbarComponent {
   }
 
   logOut() {
-    // Clear session data and update login status
+    
     localStorage.removeItem('currentUser');
     localStorage.removeItem('isLoggedIn');
     this.isLoggedIn = false;
     alert('You have successfully logged out!');
-    this.router.navigate(['/login']); // Redirect to the login page
+    this.router.navigate(['/login']); 
   }
 
   logIn() {
-    this.router.navigate(['/login']); // Redirect to the login page
+    this.router.navigate(['/login']); 
   }
 
   updateCartCount(count: number): void {

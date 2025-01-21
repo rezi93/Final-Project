@@ -26,7 +26,6 @@
         </li>
       </ul>
       <div class="ms-3">
-        <!-- Show Log Out if logged in, otherwise show Log In -->
         <button *ngIf="isLoggedIn; else loginTemplate" 
                 class="btn btn-outline-light" 
                 (click)="logOut()">Log Out</button>

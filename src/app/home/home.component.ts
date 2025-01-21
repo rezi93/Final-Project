@@ -1,4 +1,4 @@
-// home.component.ts
+
 import { Component } from '@angular/core';
 import { DataserviceService } from '../service/dataservice.service';
 import { Router, RouterModule } from '@angular/router';
