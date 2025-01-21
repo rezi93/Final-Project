@@ -1,0 +1,53 @@
+.navbar {
+    padding: 1rem;
+    transition: all 0.3s ease;
+    
+  }
+
+  .navbar.scrolled {
+    padding: 0.5rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background: white !important;
+  }
+ 
+
+  .nav-link {
+    color: white;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .nav-link:hover,
+  .nav-link.active-link {
+    color: #007bff;
+    text-decoration: underline;
+  }
+  .bi {
+    font-size: 20px;
+    color: white;
+    
+    
+  }
+  .bi:hover {
+    font-size: 20px;
+    color: #007bff;;
+    text-decoration: underline;
+    
+  }
+
+  @media (max-width: 791px) {
+    .navbar-collapse {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px #007bff(220, 132, 132, 0.1);
+      margin-top: 1rem;
+    }
+
+    .login-box {
+      margin: 1rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+  }

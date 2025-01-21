@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark" [class.scrolled]="isScrolled">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" [class.show]="!isCollapsed">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link text-light" routerLink="/home" routerLinkActive="active-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light position-relative" routerLink="/carts" routerLinkActive="active-link">
+            <i class="bi bi-cart-fill"></i>
+            <span *ngIf="cartItemCount > 0" 
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              {{ cartItemCount }}
+            </span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" routerLink="/contact" routerLinkActive="active-link">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" routerLink="/about" routerLinkActive="active-link">About</a>
+        </li>
+      </ul>
+      <div class="ms-3">
+        <!-- Show Log Out if logged in, otherwise show Log In -->
+        <button *ngIf="isLoggedIn; else loginTemplate" 
+                class="btn btn-outline-light" 
+                (click)="logOut()">Log Out</button>
+        <ng-template #loginTemplate>
+          <button class="btn btn-outline-light" (click)="logIn()">Log In</button>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</nav>
